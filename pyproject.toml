@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "pytest-run-changed"
+version = "2.0.0.dev0"
+description = "Pytest plugin that runs changed tests only"
+authors = [
+	"Martin Vielsmaier <moser@moserei.de>",
+	"Berend Klein Haneveld <berendkleinhaneveld@gmail.com>",
+]
+license = "MIT"
+homepage = "https://github.com/moser/pytest-run-changed"
+readme = "README.md"
+packages = [{include = "pytest_run_changed"}]
+classifiers=[
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Framework :: Pytest",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pytest = ">=7.4.0"
+
+[tool.poetry.plugins."pytest11"]
+"notifier" = "pytest_run_changed"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
